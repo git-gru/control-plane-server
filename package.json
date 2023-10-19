@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.mjs",
   "scripts": {
-    "start": "node index.mjs"
+    "start": "node index.mjs",
+    "dev": "nodemon --experimental-modules index.mjs"
   },
   "author": "GRU",
   "license": "ISC",
