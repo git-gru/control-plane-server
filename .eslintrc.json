@@ -8,12 +8,13 @@
   },
   "rules": {
     "no-unused-vars": [
-      "warning",
+      1,
       {
         // Ignore arguments starting with _
         "argsIgnorePattern": "^_"
       }
     ]
   },
-  "extends": "eslint:recommended"
+  "extends": "eslint:recommended",
+  "parser": "@babel/eslint-parser"
 }
