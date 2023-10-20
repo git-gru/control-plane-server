@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   let collection = await db.collection("activity_records");
   let newDocument = req.body;
-  newDocument.date = new Date();
+  newDocument.eventTime = new Date(newDocument.eventTime);
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
 });
