@@ -45,17 +45,9 @@ socketIO.on("connection", (socket) => {
 
   socket.emit("greet_from_user", "Hello Client");
 
-  socket.on("disconnect", (socket) => {
-    console.log("🔥: A user disconnected");
+  socket.on("disconnect", (reason) => {
+    console.log(`🔥: A user disconnected because of ${reason}`);
     sockets = sockets.filter(({ id }) => id !== socket.id);
-  });
-
-  socket.on("content_changed_from_client", (msg) => {
-    console.log(msg, sockets.length);
-    socketIO.emit("set_content", {
-      id: socket.id,
-      msg,
-    });
   });
 
   socket.on("add_row", (data) => {
